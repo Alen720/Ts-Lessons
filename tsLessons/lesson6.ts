@@ -20,3 +20,24 @@ console.log(getProperty(product, "inStock"));
 
 // ERROR
 // console.log(getProperty(product, "banana"));
+
+
+interface User {
+    name: string
+    age: number
+    isDeveloper: boolean
+}
+
+function getUserValue<T, K extends keyof T>(obj: T, key: K): T[K] {
+  return obj[key];
+}
+
+const user: User = {
+    name: "Alen",
+    age: 14,
+    isDeveloper: true
+}
+
+console.log(getUserValue(user, "name"))
+console.log(getUserValue(user, "age"))
+console.log(getUserValue(user, "isDeveloper"))
